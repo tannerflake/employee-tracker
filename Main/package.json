@@ -1,26 +1,22 @@
 {
-  "name": "main",
+  "name": "employee-tracker",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "server.js",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js"
+    "start": "ts-node src/index.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "inquirer": "^12.3.0",
-    "pg": "^8.13.1"
+    "pg": "^8.13.1",
+    "inquirer": "^9.2.1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@types/dotenv": "^6.1.1",
-    "@types/inquirer": "^9.0.7",
-    "@types/pg": "^8.11.6",
-    "typescript": "^5.7.2"
+    "@types/node": "^20.7.1",
+    "@types/pg": "^8.13.0",
+    "@types/inquirer": "^9.0.1",
+    "typescript": "^5.2.2",
+    "ts-node": "^10.9.1"
   }
 }

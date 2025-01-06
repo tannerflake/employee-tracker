@@ -1,26 +1,26 @@
-const dotenv = require('dotenv'); // Use require for CommonJS
-const { pool } = require('./db'); // Import pool from db.js
-const inquirer = require('inquirer'); // Import inquirer
+import { config } from "dotenv"; // Load environment variables
+import inquirer from "inquirer";
+import { pool } from "./db.js"; // Import pool from db.js
 
-dotenv.config(); // Load environment variables
+config(); // Load environment variables
 
 async function mainMenu() {
   const choices = [
-    'View all departments',
-    'View all roles',
-    'View all employees',
-    'Add a department',
-    'Add a role',
-    'Add an employee',
-    'Update an employee role',
-    'Exit',
+    "View all departments",
+    "View all roles",
+    "View all employees",
+    "Add a department",
+    "Add a role",
+    "Add an employee",
+    "Update an employee role",
+    "Exit",
   ];
 
   const { action } = await inquirer.prompt([
     {
-      type: 'list',
-      name: 'action',
-      message: 'What would you like to do?',
+      type: "list",
+      name: "action",
+      message: "What would you like to do?",
       choices,
     },
   ]);
@@ -34,15 +34,15 @@ async function run() {
   while (!exit) {
     const action = await mainMenu();
     switch (action) {
-      case 'View all departments':
-        console.log('Viewing all departments...');
+      case "View all departments":
+        console.log("Viewing all departments...");
         break;
-      case 'View all roles':
-        console.log('Viewing all roles...');
+      case "View all roles":
+        console.log("Viewing all roles...");
         break;
-      case 'Exit':
+      case "Exit":
         exit = true;
-        console.log('Goodbye!');
+        console.log("Goodbye!");
         break;
     }
   }
@@ -50,4 +50,4 @@ async function run() {
   await pool.end();
 }
 
-run().catch((err) => console.error('Error starting application:', err));
+run().catch((err) => console.error("Error starting application:", err));

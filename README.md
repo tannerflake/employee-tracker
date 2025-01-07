@@ -131,9 +131,7 @@ npm start
 
 ## Walkthrough Video
 
-[Click here to view the walkthrough video](#)
-
-*(Replace `#` with the link to your video.)*
+[Click here to view the walkthrough video](https://youtu.be/7-s8f4dYjMA)
 
 ---
 
